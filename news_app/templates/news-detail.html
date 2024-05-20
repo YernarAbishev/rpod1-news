@@ -1,0 +1,21 @@
+
+{% extends './base.html' %}
+
+{% block title %}News page{% endblock %}
+
+{% block content %}
+<section class="news">
+    <div class="container">
+        <a href="{% url 'news_page' %}" class="button-blue">Back</a>
+        <h1>{{ post.title }}</h1>
+        <p><strong>{{ post.posted_date }}</strong></p>
+        <p class="description">{{ post.description }}</p>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+

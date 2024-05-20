@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block title %}News page{% endblock %}
+
+{% block content %}
+<section class="news">
+    <div class="container">
+        <h1>News</h1>
+        {% for post in posts %}
+        <div class="news-card">
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p><strong>{{ post.posted_date }}</strong></p>
+            <p class="description">{{ post.description|truncatewords:30 }}</p>
+            <a href="{% url 'news_detail_page' pk=post.pk %}" class="button-blue">Read</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+
+
